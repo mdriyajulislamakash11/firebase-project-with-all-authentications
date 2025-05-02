@@ -1,12 +1,36 @@
-# React + Vite
+# AuthVerse 🌐🔐
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **AuthVerse** – a modern authentication-based React application supporting email/password login as well as third-party logins like Google, GitHub, and Facebook.
 
-Currently, two official plugins are available:
+🔗 **Live Site:** [https://aquamarine-lily-6607c1.netlify.app/](https://aquamarine-lily-6607c1.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔐 Firebase Authentication
+  - Email/Password Login
+  - Google Login
+  - GitHub Login
+  - Facebook Login
+- 🧑‍💼 User Profile Route (Protected)
+- 🏠 Home, About, Contact Us Pages
+- 🚀 Private Routing using React Router
+- 📦 Context API for Global Auth State
+- 🖼️ Responsive UI using Tailwind CSS & DaisyUI
+
+---
+
+## 🛠️ Technologies Used
+
+- **React.js**
+- **Firebase Authentication**
+- **React Router DOM**
+- **Tailwind CSS**
+- **DaisyUI**
+- **Netlify (Deployment)**
+
+---
+
+## 🔧 Project Structure
+
