@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Auth/AuthProvider";
 
 const Navber = () => {
+  const { users, logOut } = useContext(AuthContext);
   const links = (
     <>
-      <li><NavLink to="/">Home</NavLink> </li>
-      <li><NavLink to="/about">Abouts</NavLink> </li>
-      <li><NavLink to="/contact">Contact Us</NavLink> </li>
+      <li>
+        <NavLink to="/">Home</NavLink>{" "}
+      </li>
+      <li>
+        <NavLink to="/about">Abouts</NavLink>{" "}
+      </li>
+      <li>
+        <NavLink to="/contact">Contact Us</NavLink>{" "}
+      </li>
     </>
   );
 
@@ -38,13 +46,27 @@ const Navber = () => {
               {links}
             </ul>
           </div>
-          <Link to="/" className="text-xl font-bold">Auth <span className="text-red-600 "><sup className="text-xl font-bold">Verse</sup></span></Link>
+          <Link to="/" className="text-xl font-bold">
+            Auth{" "}
+            <span className="text-red-600 ">
+              <sup className="text-xl font-bold">Verse</sup>
+            </span>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <Link to="/login" className="btn">LogIn</Link>
+          {users ? (
+            <>
+            <small>{users.email}</small>
+            <button className="btn btn-accent " onClick={logOut} >LogOut</button>
+            </>
+          ) : (
+            <Link to="/login" className="btn btn-accent">
+              LogIn
+            </Link>
+          )}
         </div>
       </div>
     </div>
