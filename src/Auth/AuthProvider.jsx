@@ -1,7 +1,6 @@
 import { createUserWithEmailAndPassword, FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import { auth } from './fairbase.init';
-import { useNavigate } from 'react-router-dom';
 export const AuthContext = createContext(null)
 
 const AuthProvider = ({children}) => {
