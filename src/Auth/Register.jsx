@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
 const Register = () => {
-  const { createUser, handleGoogleLogin } = useContext(AuthContext);
+  const { createUser, handleGoogleLogin, handleGitHubLogin, handleFaceBookLogin } = useContext(AuthContext);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -20,7 +20,7 @@ const Register = () => {
 
     // Password Validation using RegEx
     const passwordRegEx =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
     if (!passwordRegEx.test(password)) {
       alert(
         "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character."
@@ -114,6 +114,8 @@ const Register = () => {
         {/*social login  */}
         <div>
           <button className="btn" onClick={handleGoogleLogin}>Google Login</button>
+          <button className="btn" onClick={handleGitHubLogin}>GitHub Login</button>
+          <button className="btn" onClick={handleFaceBookLogin}>FaceBook Login</button>
         </div>
       </div>
     </div>

@@ -15,6 +15,11 @@ const Navber = () => {
       <li>
         <NavLink to="/contact">Contact Us</NavLink>{" "}
       </li>
+      {users && (
+        <li>
+          <NavLink to="/profile">Profile</NavLink>
+        </li>
+      )}
     </>
   );
 
@@ -59,8 +64,10 @@ const Navber = () => {
         <div className="navbar-end">
           {users ? (
             <>
-            <small>{users.email}</small>
-            <button className="btn btn-accent " onClick={logOut} >LogOut</button>
+              <small>{users.email}</small>
+              <button className="btn btn-accent " onClick={logOut}>
+                LogOut
+              </button>
             </>
           ) : (
             <Link to="/login" className="btn btn-accent">
