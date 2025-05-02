@@ -3,28 +3,35 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
 
-    const {createUser} = useContext(AuthContext)
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    const confirmPassword = event.target.confiramePassword.value;
 
-    const handleFormSubmit = (event) => {
-        event.preventDefault()
-        const name = event.target.name.value;
-        const email = event.target.email.value;
-        const password = event.target.password.value;
-        const confirmPassword = event.target.confiramePassword.value;
+    //Confirame Password
+    if (password != confirmPassword) {
+      alert("please valid password");
+      return;
+    }
 
-        console.log(name, email, password, confirmPassword)
+    // Password Validation using RegEx
+    const passwordRegEx =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!passwordRegEx.test(password)) {
+      alert(
+        "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character."
+      );
+      return;
+    }
 
-        createUser(email, password)
-        .then((result) => {
-            console.log(result.user)
-        })
-
-
-    };
-
-
-
+    createUser(email, password).then((result) => {
+      console.log(result.user);
+    });
+  };
 
   return (
     <div className="flex justify-center items-center py-14 bg-gray-100">
