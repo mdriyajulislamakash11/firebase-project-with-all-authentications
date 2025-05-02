@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, handleGoogleLogin } = useContext(AuthContext);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -111,6 +111,10 @@ const Register = () => {
             Log In
           </Link>
         </p>
+        {/*social login  */}
+        <div>
+          <button className="btn" onClick={handleGoogleLogin}>Google Login</button>
+        </div>
       </div>
     </div>
   );
